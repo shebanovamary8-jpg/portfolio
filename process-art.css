@@ -23,12 +23,9 @@
 .process-stages-backdrop::before {
   content: "";
   position: absolute;
-  inset: 0;
-  background:
-    radial-gradient(ellipse 85% 90% at 0% 30%, #edebf6 10%, transparent 78%),
-    radial-gradient(ellipse 55% 90% at 50% 45%, #786156 5%, transparent 78%),
-    radial-gradient(ellipse 85% 85% at 100% 28%, #aac3e3 8%, transparent 82%),
-    linear-gradient(145deg, #e8e7f2, #93817c 72%, #747377);
+  inset: -32px;
+  background: url('./assets/process-1.png') center / cover;
+  filter: blur(25px);
 }
 
 .process-stages .stage-list {
@@ -160,10 +157,7 @@
 }
 
 .process-notion {
-  background:
-    radial-gradient(ellipse 85% 75% at 47% 43%, #829d27 4%, transparent 75%),
-    radial-gradient(ellipse 80% 65% at 84% 78%, #acd040 8%, transparent 78%),
-    linear-gradient(165deg, #c3dd73, #9bc437 82%);
+  background: url('./assets/process/что-то деленое.png') center / cover;
 }
 
 .process-notion .notion-sheet {
@@ -192,10 +186,7 @@
 }
 
 .process-contract {
-  background:
-    radial-gradient(ellipse 75% 55% at 0% 88%, #d9eaf8 10%, transparent 82%),
-    radial-gradient(ellipse 88% 65% at 86% 77%, #d2e7fa 8%, transparent 78%),
-    linear-gradient(180deg, #3495f6, #74b9f8 48%, #c0def9);
+  background: url('./assets/process/облака.png') center / cover;
 }
 
 .contract-lock {
