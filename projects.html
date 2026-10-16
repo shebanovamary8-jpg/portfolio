@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#ffffff" />
+    <meta name="description" content="Все проекты Маруси Шебановой: сайты, платформы и другие дизайн-проекты." />
+    <title>Проекты — Маруся Шебанова</title>
+    <script src="./layout-scale.js"></script>
+    <link rel="stylesheet" href="./styles.css" />
+    <link rel="stylesheet" href="./process-art.css" />
+    <link rel="stylesheet" href="./designers.css" />
+    <link rel="stylesheet" href="./layout-scale.css" />
+    <link rel="stylesheet" href="./projects-page.css" />
+    <link rel="stylesheet" href="./project-detail.css" />
+    <link rel="stylesheet" href="./portrait-tablet.css" />
+    <link rel="stylesheet" href="./mobile.css" />
+    <script src="./typography.js" defer></script>
+    <script src="./music.js" defer></script>
+    <script src="./mobile-menu.js" defer></script>
+    <script src="./project-filters.js" defer></script>
+    <script src="./tooltip-position.js" defer></script>
+    <script src="./page-content.js" defer></script>
+    <script src="./navigation.js" defer></script>
+  </head>
+  <body class="projects-page" id="top">
+    <header class="site-header">
+      <a class="brand" href="./index.html#top">Маруся Шебанова</a>
+      <button class="mobile-menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu">Меню</button>
+      <nav class="main-nav" id="mobile-menu" aria-label="Основная навигация">
+        <a href="./projects.html" aria-current="page">Проекты</a>
+        <a href="./materials.html?category=videos">Видео</a>
+        <a href="./materials.html?category=articles">Статьи</a>
+        <a href="https://t.me/mmarrusyaa" target="_blank" rel="noopener noreferrer">Связаться</a>
+        <button class="sound-button gradient-blue lift-on-hover" type="button" aria-label="Включить музыку" title="Включить музыку" aria-pressed="false" aria-controls="background-music">
+          <img src='./assets/блок "познакомимся поближе%3F"/iconoir_sound-low-solid.svg' width="16" height="16" alt="" aria-hidden="true" />
+        </button>
+      </nav>
+    </header>
+    <audio id="background-music" src="./assets/camilo-septimo-inevitable.mp3" preload="none" loop></audio>
+
+    <main class="projects-page-main shell" id="projects">
+      <section aria-labelledby="projects-page-title">
+        <div class="projects-page-heading">
+          <h1 id="projects-page-title">Проекты <span class="projects-count">13</span></h1>
+          <div class="project-filters" role="group" aria-label="Фильтры проектов">
+            <button class="project-filter" type="button" data-filter="sites" aria-pressed="false">сайты</button>
+            <button class="project-filter" type="button" data-filter="identity" aria-pressed="false">айдентика</button>
+            <button class="project-filter" type="button" data-filter="product-design" aria-pressed="false">продуктовый дизайн</button>
+            <button class="project-filter" type="button" data-filter="vibe-coding" aria-pressed="false">вайбкодинг</button>
+            <button class="project-filter" type="button" data-filter="graphics" aria-pressed="false">графика</button>
+            <button class="project-filter" type="button" data-filter="generations" aria-pressed="false">генерации</button>
+          </div>
+        </div>
+
+        <div class="project-grid projects-page-grid">
+          <article class="project-card" data-project="t-bank-product" data-project-name="Т-Банк" data-categories="product-design">
+            <a class="project-card-link" href="./t-bank-product.html" aria-label="Открыть проект обновления статистики Рекламной платформы Т-Банка">
+              <div class="project-image">
+                <img class="project-cover" src="./assets/projects/T-Bank product/cover.png" alt="" />
+              </div>
+              <h3>Обновление статистики в сервисе “Рекламная платформа” Т-Банка</h3>
+            </a>
+          </article>
+          <article class="project-card" data-project="hacknet" data-project-name="Hacknet" data-categories="product-design">
+            <a class="project-card-link" href="./hacknet.html" aria-label="Открыть проект Hacknet">
+            <div class="project-image">
+              <img class="project-cover" src="./assets/projects/Hacknet/cover.png" alt="" loading="lazy" />
+              <div class="project-tags"><span><span class="tag-label gradient-pink">Лендинг</span></span><span><span class="tag-label gradient-blue">Платформа</span></span></div>
+            </div>
+            <h3>Платформа для белых хакеров</h3>
+            </a>
+          </article>
+          <article class="project-card" data-project="ila-estate" data-project-name="Ila Estate" data-categories="sites">
+            <a class="project-card-link" href="./project.html" aria-label="Открыть проект Ila Estate">
+            <div class="project-image">
+              <img class="project-cover" src="./assets/projects/Ila Estate/cover.png" alt="" />
+              <div class="project-tags"><span><span class="tag-label gradient-pink">Многостраничный сайт</span></span><span class="project-icon-tag"><img src="./assets/projects/Ila Estate/Tilda.svg" width="14" height="15" alt="Tilda" /></span></div>
+            </div>
+            <h3>Редизайн сайта элитной недвижимости</h3>
+            </a>
+          </article>
+          <article class="project-card" data-project="big-in-japan" data-project-name="Big in Japan" data-categories="sites">
+            <a class="project-card-link" href="./big-in-japan.html" aria-label="Открыть проект Big in Japan">
+            <div class="project-image">
+              <img class="project-cover" src="./assets/projects/Big in Japan/cover.png" alt="" loading="lazy" />
+              <div class="project-tags"><span><span class="tag-label gradient-pink">Лендинг</span></span></div>
+            </div>
+            <h3>Сайт тура в Японию для девелоперов за 3 недели</h3>
+            </a>
+          </article>
+          <article class="project-card" data-project="t-business-creatives" data-project-name="Креативы для Т-Бизнеса" data-categories="graphics">
+            <a class="project-card-link" href="./t-business-creatives.html" aria-label="Открыть проект креативов для Т-Бизнеса">
+              <div class="project-image">
+                <img class="project-cover" src="./assets/projects/Креативы для Т-Бизнес/web/cover.webp" alt="" loading="lazy" />
+              </div>
+              <h3>Креативы для <span class="project-brand-nowrap">Т-Бизнеса</span></h3>
+            </a>
+          </article>
+          <article class="project-card" data-project="petrushka" data-project-name="Petrushka" data-categories="sites">
+            <a class="project-card-link" href="./petrushka.html" aria-label="Открыть проект Petrushka">
+            <div class="project-image">
+              <img class="project-cover" src="./assets/projects/Petrushka/cover.png" alt="" loading="lazy" />
+              <div class="project-tags"><span><span class="tag-label gradient-pink">Лендинг</span></span></div>
+            </div>
+            <h3>Вкусный сайт кейтеринговой компании</h3>
+            </a>
+          </article>
+          <article class="project-card" data-project="piter-places" data-project-name="Места Питера" data-categories="sites vibe-coding">
+            <a class="project-card-link" href="./piter-places.html" aria-label="Открыть проект сайта с подборкой мест Питера">
+              <div class="project-image">
+                <img class="project-cover" src="./assets/projects/Места Питера/cover.png" alt="" loading="lazy" />
+                <div class="project-tags"><span><span class="tag-label gradient-pink">Лендинг</span></span></div>
+              </div>
+              <h3>Сайт с подборкой мест Питера</h3>
+            </a>
+          </article>
+          <article class="project-card" data-project="fran-silvestre" data-project-name="Fran Silvestre" data-categories="sites">
+            <a class="project-card-link" href="./fran-silvestre.html" aria-label="Открыть проект Fran Silvestre">
+            <div class="project-image">
+              <img class="project-cover" src="./assets/projects/Fran Silvestre/cover.png" alt="" loading="lazy" />
+              <div class="project-tags"><span><span class="tag-label gradient-pink">Многостраничный сайт</span></span></div>
+            </div>
+            <h3>Корпоративный сайт для архитектурного бюро</h3>
+            </a>
+          </article>
+          <article class="project-card" data-project="magazine-shop" data-project-name="Магазин журнала" data-categories="sites">
+            <a class="project-card-link" href="./magazine-shop.html" aria-label="Открыть проект интернет-магазина для журнала">
+              <div class="project-image">
+                <img class="project-cover" src="./assets/projects/Магазин журнала/cover.png" alt="" loading="lazy" />
+                <div class="project-tags"><span><span class="tag-label gradient-pink">Интернет-магазин</span></span></div>
+              </div>
+              <h3>Интернет магазин для журнала</h3>
+            </a>
+          </article>
+          <article class="project-card" data-project="grandma-posters" data-project-name="Постеры" data-categories="graphics generations">
+            <a class="project-card-link" href="./grandma-posters.html" aria-label="Открыть проект постеров с современной бабушкиной едой">
+              <div class="project-image">
+                <img class="project-cover" src="./assets/projects/Постеры/cover.png" alt="" loading="lazy" />
+              </div>
+              <h3>Постеры с современной бабушкиной едой</h3>
+            </a>
+          </article>
+          <article class="project-card" data-project="midjourney-gallery" data-project-name="Мои генерации" data-categories="generations">
+            <a class="project-card-link" href="./midjourney-gallery.html" aria-label="Открыть галерею моих генераций в Midjourney">
+              <div class="project-image">
+                <img class="project-cover" src="./assets/projects/Мои генерации/web/cover-027.webp" alt="" loading="lazy" />
+              </div>
+              <h3>Галерея моих генераций в Midjourney</h3>
+            </a>
+          </article>
+          <article class="project-card" data-project="alfa-identity" data-project-name="Альфа-Банк" data-categories="identity">
+            <a class="project-card-link" href="./alfa-identity.html" aria-label="Открыть проект айдентики дизайн-системы Альфа-Банка">
+              <div class="project-image">
+                <img class="project-cover" src="./assets/projects/Альфа-Банк/cover.png" alt="" loading="lazy" />
+              </div>
+              <h3>Айдентика дизайн-системы Альфа-Банка</h3>
+            </a>
+          </article>
+          <article class="project-card" data-project="dating-app" data-project-name="Приложение для знакомств" data-categories="identity sites">
+            <a class="project-card-link" href="./dating-app.html" aria-label="Открыть проект приложения для знакомств">
+              <div class="project-image">
+                <img class="project-cover" src="./assets/projects/Приложение для знакомств/web/cover-iphone.webp" alt="" loading="lazy" />
+              </div>
+              <h3>Приложение для знакомств</h3>
+            </a>
+          </article>
+        </div>
+        <p class="projects-empty" hidden>В выбранных категориях пока нет проектов.</p>
+        <p class="sr-only" id="project-results-status" role="status" aria-live="polite"></p>
+      </section>
+    </main>
+
+    <footer class="site-footer shell" id="contact"><span class="footer-update">Вайбкод. Обновлено: 2026</span><a class="pill gradient-blue footer-top" href="#top">Наверх</a><div class="footer-social"><nav aria-label="Социальные сети"><a class="footer-contact" href="https://t.me/mmarrusyaa" target="_blank" rel="noopener noreferrer">Связаться</a><a href="https://youtube.com/@mmarrusyaa?si=Yy90SyHRywnETBBz" target="_blank" rel="noopener noreferrer">Ютуб</a><a href="https://t.me/maresikkk" target="_blank" rel="noopener noreferrer">Тг-канал</a><a href="https://www.instagram.com/mmarrusya/" target="_blank" rel="noopener noreferrer">Инстаграм*</a></nav><small class="footer-note">*Инстаграм запрещен на территории РФ</small></div></footer>
+  </body>
+</html>

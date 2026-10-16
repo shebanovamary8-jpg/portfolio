@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#ffffff" />
+    <meta name="description" content="Места Питера — Сайт с подборкой мест Питера. Проект Маруси Шебановой." />
+    <title>Места Питера — Маруся Шебанова</title>
+    <script src="./layout-scale.js"></script>
+    <link rel="stylesheet" href="./styles.css" />
+    <link rel="stylesheet" href="./process-art.css" />
+    <link rel="stylesheet" href="./designers.css" />
+    <link rel="stylesheet" href="./layout-scale.css" />
+    <link rel="stylesheet" href="./projects-page.css" />
+    <link rel="stylesheet" href="./project-detail.css" />
+    <link rel="stylesheet" href="./portrait-tablet.css" />
+    <link rel="stylesheet" href="./mobile.css" />
+    <script src="./typography.js" defer></script>
+    <script src="./music.js" defer></script>
+    <script src="./mobile-menu.js" defer></script>
+    <script src="./tooltip-position.js" defer></script>
+    <script src="./project-filters.js" defer></script>
+    <script src="./page-content.js" defer></script>
+    <script src="./navigation.js" defer></script>
+  </head>
+  <body class="project-detail-page project-detail-page--piter" id="top">
+    <header class="site-header">
+      <a class="brand" href="./index.html#top">Маруся Шебанова</a>
+      <button class="mobile-menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu">Меню</button>
+      <nav class="main-nav" id="mobile-menu" aria-label="Основная навигация">
+        <a href="./projects.html">Проекты</a>
+        <a href="./materials.html?category=videos">Видео</a>
+        <a href="./materials.html?category=articles">Статьи</a>
+        <a href="https://t.me/mmarrusyaa" target="_blank" rel="noopener noreferrer">Связаться</a>
+        <button class="sound-button gradient-blue lift-on-hover" type="button" aria-label="Включить музыку" title="Включить музыку" aria-pressed="false" aria-controls="background-music">
+          <img src='./assets/блок "познакомимся поближе%3F"/iconoir_sound-low-solid.svg' width="16" height="16" alt="" aria-hidden="true" />
+        </button>
+      </nav>
+    </header>
+    <audio id="background-music" src="./assets/camilo-septimo-inevitable.mp3" preload="none" loop></audio>
+
+    <main class="project-detail-main shell">
+      <section class="project-detail" aria-labelledby="project-detail-title">
+        <div class="project-detail-copy">
+          <h1 id="project-detail-title">Сайт с подборкой мест Питера</h1>
+          <div class="project-detail-description">
+            <p>Была в Питере 4 раза. Захотелось сохранить где-то все понравившиеся места и поделиться с другими.</p>
+            <p>Идея дизайна пришла через 20 секунд после идеи делать подборку. Решила вайбкодить. Стек: Фигма / Cursor / Supabase / Chat GPT.</p>
+            <p>Итог: дизайн за 2 часа, вайбкод за 10 часов, база данных — еще 5 часов. Подружилась с кодом, записала видео-разбор всего процесса. Сейчас вношу небольшие изменения и правлю баги. Вайбкод — супер! Всех жду в подборке.</p>
+          </div>
+          <p class="project-detail-year">2026</p>
+        </div>
+
+        <div class="project-detail-gallery" id="project-gallery" aria-label="Иллюстрации проекта Места Питера">
+          <div class="project-detail-gallery-row project-detail-gallery-row--two"><figure class="project-detail-media"><img src="./assets/projects/Места Питера/cover.png" alt="Кадр 1 проекта Места Питера" loading="lazy" /></figure><figure class="project-detail-media"><img src="./assets/projects/Места Питера/2.png" alt="Кадр 2 проекта Места Питера" loading="lazy" /></figure></div>
+          <figure class="project-detail-media"><img src="./assets/projects/Места Питера/3.png" alt="Кадр 3 проекта Места Питера" loading="lazy" /></figure>
+          <div class="project-detail-gallery-row project-detail-gallery-row--two"><figure class="project-detail-media"><img src="./assets/projects/Места Питера/4.png" alt="Кадр 4 проекта Места Питера" loading="lazy" /></figure><figure class="project-detail-media"><img src="./assets/projects/Места Питера/5.png" alt="Кадр 5 проекта Места Питера" loading="lazy" /></figure></div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer shell" id="contact"><span class="footer-update">Вайбкод. Обновлено: 2026</span><a class="pill gradient-blue footer-top" href="#top">Наверх</a><div class="footer-social"><nav aria-label="Социальные сети"><a class="footer-contact" href="https://t.me/mmarrusyaa" target="_blank" rel="noopener noreferrer">Связаться</a><a href="https://youtube.com/@mmarrusyaa?si=Yy90SyHRywnETBBz" target="_blank" rel="noopener noreferrer">Ютуб</a><a href="https://t.me/maresikkk" target="_blank" rel="noopener noreferrer">Тг-канал</a><a href="https://www.instagram.com/mmarrusya/" target="_blank" rel="noopener noreferrer">Инстаграм*</a></nav><small class="footer-note">*Инстаграм запрещен на территории РФ</small></div></footer>
+  </body>
+</html>

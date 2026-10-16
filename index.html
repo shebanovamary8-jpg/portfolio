@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#ffffff" />
+    <meta name="description" content="Маруся Шебанова — веб и продуктовый дизайнер. Проекты, подход к работе и материалы для дизайнеров." />
+    <title>Маруся Шебанова — веб и продуктовый дизайнер</title>
+    <script src="./layout-scale.js"></script>
+    <link rel="stylesheet" href="./styles.css" />
+    <link rel="stylesheet" href="./process-art.css" />
+    <link rel="stylesheet" href="./designers.css" />
+    <link rel="stylesheet" href="./layout-scale.css" />
+    <link rel="stylesheet" href="./projects-page.css" />
+    <link rel="stylesheet" href="./project-detail.css" />
+    <link rel="stylesheet" href="./portrait-tablet.css" />
+    <link rel="stylesheet" href="./mobile.css" />
+    <script src="./typography.js" defer></script>
+    <script src="./music.js" defer></script>
+    <script src="./mobile-menu.js" defer></script>
+    <script src="./tooltip-position.js" defer></script>
+    <script src="./project-filters.js" defer></script>
+    <script src="./page-content.js" defer></script>
+    <script src="./navigation.js" defer></script>
+  </head>
+  <body class="home-page" id="top">
+    <header class="site-header">
+      <a class="brand" href="#top">Маруся Шебанова</a>
+      <button class="mobile-menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu">Меню</button>
+      <nav class="main-nav" id="mobile-menu" aria-label="Основная навигация">
+        <a href="./projects.html">Проекты</a>
+        <a href="./materials.html?category=videos">Видео</a>
+        <a href="./materials.html?category=articles">Статьи</a>
+        <a href="https://t.me/mmarrusyaa" target="_blank" rel="noopener noreferrer">Связаться</a>
+        <button class="sound-button gradient-blue lift-on-hover" type="button" aria-label="Включить музыку" title="Включить музыку" aria-pressed="false" aria-controls="background-music">
+          <img src='./assets/блок "познакомимся поближе%3F"/iconoir_sound-low-solid.svg' width="16" height="16" alt="" aria-hidden="true" />
+        </button>
+      </nav>
+    </header>
+    <audio id="background-music" src="./assets/camilo-septimo-inevitable.mp3" preload="none" loop></audio>
+
+    <main>
+      <section class="hero shell" aria-labelledby="hero-title">
+        <img class="hero-photo" src="./assets/hero.png" alt="Маруся Шебанова" />
+        <div class="hero-copy">
+          <h1 id="hero-title">Маруся Шебанова,<br />веб и продуктовый дизайнер</h1>
+          <p>Дизайню для брендов и экспертов, рассказываю про дизайн‑мышление и вдохновение для коллег. Открыта к сотрудничеству</p>
+          <div class="client-logos" aria-label="Клиенты и партнёры">
+            <img src="./assets/logos/Лого дополнительная версия черный 1.svg" width="89" height="17" alt="Альфа-Банк" />
+            <img src="./assets/logos/Frame 2136139453.svg" width="83" height="15" alt="Т-Банк" />
+            <img src="./assets/logos/Group_76_1 2.svg" width="62" height="34" alt="ILA Estate" />
+            <img src="./assets/logos/Frame 2136139454.svg" width="116" height="26" alt="Бюро Сучкова" />
+          </div>
+          <div class="hero-links">
+            <div class="hero-action">
+              <button class="pill gradient-pink" type="button" aria-describedby="experience-tooltip" aria-expanded="false">Опыт</button>
+              <div class="hero-tooltip" id="experience-tooltip" role="tooltip">
+                <h3>Опыт</h3>
+                <p>В дизайне я около 5 лет. Работала в студии, в стартапе, в Т-Банке. Реализовала больше 50 проектов</p>
+              </div>
+            </div>
+            <div class="hero-action">
+              <button class="pill gradient-orange" type="button" aria-describedby="skills-tooltip" aria-expanded="false">Что умею</button>
+              <div class="hero-tooltip hero-tooltip-skills" id="skills-tooltip" role="tooltip">
+                <h3>Что умею</h3>
+                <div class="hero-tooltip-tags"><span>сайты</span><span>интерфейсы</span><span>приложения</span><span>диджитал-материалы</span><span>дизайн в Figma</span><span>вайбкодинг</span><span>генерации в нейросетях</span><span>ux-аудит</span><span>копирайтинг</span></div>
+              </div>
+            </div>
+            <div class="hero-action">
+              <button class="pill gradient-blue" type="button" aria-describedby="awards-tooltip" aria-expanded="false">Награды</button>
+              <div class="hero-tooltip hero-tooltip-awards" id="awards-tooltip" role="tooltip">
+                <h3>Награды</h3>
+                <ul><li>4 Made on Tilda</li><li>2 CSSLight Featured</li><li>2 Uprock Gallery</li><li>1 Dprofile</li><li>5 место в Alfa Design Challenge</li></ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="projects shell" id="projects" aria-labelledby="projects-title">
+        <div class="section-heading"><h2 id="projects-title">Проекты</h2></div>
+        <div class="project-grid">
+          <article class="project-card" data-project="t-bank-product" data-project-name="Т-Банк">
+            <a class="project-card-link" href="./t-bank-product.html" aria-label="Открыть проект обновления статистики Рекламной платформы Т-Банка">
+              <div class="project-image">
+                <img class="project-cover" src="./assets/projects/T-Bank product/cover.png" alt="" />
+              </div>
+              <h3>Обновление статистики в сервисе “Рекламная платформа” Т-Банка</h3>
+            </a>
+          </article>
+          <article class="project-card" data-project="hacknet" data-project-name="Hacknet">
+            <a class="project-card-link" href="./hacknet.html" aria-label="Открыть проект Hacknet">
+            <div class="project-image">
+              <img class="project-cover" src="./assets/projects/Hacknet/cover.png" alt="" loading="lazy" />
+              <div class="project-tags"><span><span class="tag-label gradient-pink">Лендинг</span></span><span><span class="tag-label gradient-blue">Платформа</span></span></div>
+            </div>
+            <h3>Платформа для белых хакеров</h3>
+            </a>
+          </article>
+          <article class="project-card" data-project="ila-estate" data-project-name="Ila Estate">
+            <a class="project-card-link" href="./project.html" aria-label="Открыть проект Ila Estate">
+            <div class="project-image">
+              <img class="project-cover" src="./assets/projects/Ila Estate/cover.png" alt="" />
+              <div class="project-tags"><span><span class="tag-label gradient-pink">Многостраничный сайт</span></span><span class="project-icon-tag"><img src='./assets/projects/Ila Estate/Tilda.svg' width="14" height="15" alt="Tilda" /></span></div>
+            </div>
+            <h3>Редизайн сайта элитной недвижимости</h3>
+            </a>
+          </article>
+          <article class="project-card" data-project="big-in-japan" data-project-name="Big in Japan">
+            <a class="project-card-link" href="./big-in-japan.html" aria-label="Открыть проект Big in Japan">
+            <div class="project-image">
+              <img class="project-cover" src="./assets/projects/Big in Japan/cover.png" alt="" loading="lazy" />
+              <div class="project-tags"><span><span class="tag-label gradient-pink">Лендинг</span></span></div>
+            </div>
+            <h3>Сайт тура в Японию для девелоперов за 3 недели</h3>
+            </a>
+          </article>
+          <article class="project-card" data-project="t-business-creatives" data-project-name="Креативы для Т-Бизнеса">
+            <a class="project-card-link" href="./t-business-creatives.html" aria-label="Открыть проект креативов для Т-Бизнеса">
+            <div class="project-image">
+              <img class="project-cover" src="./assets/projects/Креативы для Т-Бизнес/web/cover.webp" alt="" loading="lazy" />
+            </div>
+            <h3>Креативы для <span class="project-brand-nowrap">Т-Бизнеса</span></h3>
+            </a>
+          </article>
+          <article class="project-card" data-project="fran-silvestre" data-project-name="Fran Silvestre">
+            <a class="project-card-link" href="./fran-silvestre.html" aria-label="Открыть проект Fran Silvestre">
+            <div class="project-image">
+              <img class="project-cover" src="./assets/projects/Fran Silvestre/cover.png" alt="" loading="lazy" />
+              <div class="project-tags"><span><span class="tag-label gradient-pink">Многостраничный сайт</span></span></div>
+            </div>
+            <h3>Корпоративный сайт для архитектурного бюро</h3>
+            </a>
+          </article>
+        </div>
+        <div class="all-projects"><a class="pill gradient-blue lift-on-hover" href="./projects.html">Смотреть все проекты</a></div>
+      </section>
+
+      <section class="process shell" id="process" aria-labelledby="process-title">
+        <div class="section-heading"><h2 id="process-title">Как будем работать</h2></div>
+        <div class="process-grid">
+          <article class="process-card">
+            <div class="process-art process-stages">
+              <div class="process-stages-backdrop" aria-hidden="true"></div>
+              <div class="stage-list">
+                <span>знакомство</span>
+                <button class="stage-tooltip-trigger" type="button" aria-describedby="stage-research-tooltip">исследование <b>＋</b><span class="stage-tooltip stage-tooltip--research" id="stage-research-tooltip" role="tooltip"><span>Если у вас дизайн с нуля — проведу полный анализ рынка, пользователей и создам структуру. Для редизайна буду исследовать, почему дизайн не закрывает свою задачу и как это исправить.</span><span>Объем исследования зависит от задачи</span></span></button>
+                <span>прототип</span><span>мудборд</span><span>дизайн</span>
+                <button class="stage-tooltip-trigger stage-tooltip-trigger--build" type="button" aria-describedby="stage-build-tooltip">верстка <b>＋</b><span class="stage-tooltip stage-tooltip--build" id="stage-build-tooltip" role="tooltip">Можем сверстать проект на Тильде, завайбкодить или передать в разработку</span></button>
+                <span>передача проекта</span>
+              </div>
+            </div>
+            <div class="process-copy"><h3>Поэтапно</h3><p>Работаю по отлаженному процессу, который упрощает согласование и минимизирует риски и правки</p></div>
+          </article>
+          <article class="process-card">
+            <div class="process-art process-video"><div class="process-video-orbit"><img src="./assets/process/Rectangle 5341.png" alt="" /><span><img src="./assets/process/tabler_video-filled.svg" alt="" /></span></div><span class="process-art-pill lift-on-hover">Получить видео-защиту</span></div>
+            <div class="process-copy"><h3>Объясняя решения</h3><p>После каждого этапа записываю небольшое видео-пояснение, чтобы объяснить все свои задумки</p></div>
+          </article>
+          <article class="process-card">
+            <div class="process-art process-notion"><img class="notion-sheet notion-sheet-materials" src="./assets/process/блок прозрачно_1.svg" alt="" /><img class="notion-sheet notion-sheet-progress" src="./assets/process/блок прозрачно_2.svg" alt="" /></div>
+            <div class="process-copy"><h3>Прозрачно</h3><p>Под каждый проект создаю Notion‑пространство с материалами и процессом реализации, чтобы вы всегда были в курсе апдейтов</p></div>
+          </article>
+          <article class="process-card">
+            <div class="process-art process-contract">
+              <span class="contract-lock"><img src="./assets/process/mingcute_safe-lock-fill.svg" alt="" /></span>
+              <div class="contract-messages" aria-hidden="true"><img src="./assets/process/сообщения.svg" alt="" /></div>
+            </div>
+            <div class="process-copy"><h3>Официально</h3><p>Заключаю с клиентами договора, чтобы у вас по бухгалтерии все было четко (ㅅ´ ˘ `)</p></div>
+          </article>
+        </div>
+      </section>
+
+      <section class="designers shell" id="designers" aria-labelledby="designers-title">
+        <div class="designers-left"><h2 id="designers-title">Дизайнерам</h2><div class="designers-deco"><img src="./assets/logos/моя моська.png" alt="Маруся" width="96" height="96" /><span>◕⩊◕</span></div></div>
+        <div class="designers-list">
+          <article class="designer-item designer-item--course">
+            <div class="designer-heading"><span class="number gradient-pink">1</span><h3>Цех аналитики</h3></div>
+            <div class="designer-body"><p>Практический курс по аналитике для веб и продуктовых дизайнеров.</p><p>За 7 недель пройдешь путь от задачи бизнеса до прототипа, в котором сможешь объяснить и защитить все свои решения. Научишься исследовать потребности пользователей, проверять гипотезы и связывать решения в интерфейсе с целями продукта. <a href="https://mmarrusya.notion.site/3d5584e2bf67807b814dceb717daf07d" target="_blank" rel="noopener noreferrer">Смотреть программу</a></p></div>
+          </article>
+          <article class="designer-item designer-item--consultation"><div class="designer-heading"><span class="number gradient-orange">2</span><h3>Консультации</h3><div class="designer-plus-wrap"><button class="designer-plus" type="button" aria-label="Как проходят консультации" aria-describedby="consultation-tooltip">＋</button><div class="designer-tooltip" id="consultation-tooltip" role="tooltip"><p>Как проходят</p><ul><li>Списываемся, обсуждаем вводные и запрос. Формируем план созвона. Назначаем дату</li><li>Готовлю презентацию, которая остается у вас. Длительность созвона 1,5–2,5 часа. Могу дать задание на отработку (зависит от запроса)</li><li>В течение недели после созвона можете тормошить меня по любым вопросам по теме. Если было задание на отработку — проверяю, обсуждаем</li></ul></div></div></div><div class="designer-body"><p>Провожу консультации для веб / продуктовых и иногда граф. дизайнеров. <a class="designer-contact-line" href="https://t.me/mmarrusyaa" target="_blank" rel="noopener noreferrer">Записаться можно в тг</a></p><div class="topic-tags"><span>карьера и рост</span><span>работа с клиентами</span><span>фигма про</span><span>разбор и улучшение дизайна</span><span>хард скиллы</span></div></div></article>
+          <article class="designer-item designer-item--materials">
+            <div class="designer-heading"><span class="number gradient-blue">3</span><h3>Полезные материалы</h3></div>
+            <div class="designer-body"><p>Записываю длинные видео с ответами на вопросы, которыми задавалась в начале пути и сейчас: развитие, аналитика, тексты, вайбкодинг. <a href="./materials.html?category=videos">Смотреть видео</a></p><p>Периодически выкатываю статьи по дизайн тематике. Уже есть про работу в Миджорни, как составлять ТЗ, где учиться дизайну. <a href="./materials.html?category=articles">Читать тут</a></p></div>
+          </article>
+        </div>
+      </section>
+
+      <section class="about shell" id="about" aria-labelledby="about-title">
+        <div class="about-inner">
+        <div class="about-top">
+          <div class="about-photos"><img src="./assets/about-1.png" alt="Маруся перед ярким муралом" /><img src="./assets/about-2.png" alt="Портрет Маруси" /></div>
+          <div class="about-copy"><h2 id="about-title">Познакомимся поближе?</h2><p>Я Маруся, дизайнер с опытом менеджера, редактора, предпринимателя, препода и блогера (˶ᵔ ᵕ ᵔ˶)</p><h3>Интересные факты</h3><ul><li>Окончила Плешку по направлению «Бизнес менеджмент» с красным дипломом</li><li>Английский — C1 (IELTS)</li><li>Полностью прошла Хогвартс Легаси</li><li>За спиной 6 классов фортепиано (закончила экстерном)</li><li>Была в 22 странах и на краю света</li><li>Рыжий — мой натуральный цвет</li><li>Раньше занималась биатлоном и хотела посвятить жизнь спорту (накатала на 2-ой юношеский разряд)</li></ul></div>
+        </div>
+        <div class="about-banner" role="img" aria-label="Фотографии Маруси">
+          <img src='./assets/блок "познакомимся поближе%3F"/KZ_CELAYA_58 2.png' alt="" />
+          <img src='./assets/блок "познакомимся поближе%3F"/KZ_CELAYA_58 3.png' alt="" />
+          <img src='./assets/блок "познакомимся поближе%3F"/KZ_CELAYA_58 4.png' alt="" />
+        </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer shell" id="contact"><span class="footer-update">Вайбкод. Обновлено: 2026</span><a class="pill gradient-blue lift-on-hover footer-top" href="#top">Наверх</a><div class="footer-social"><nav aria-label="Социальные сети"><a class="footer-contact" href="https://t.me/mmarrusyaa" target="_blank" rel="noopener noreferrer">Связаться</a><a href="https://youtube.com/@mmarrusyaa?si=Yy90SyHRywnETBBz" target="_blank" rel="noopener noreferrer">Ютуб</a><a href="https://t.me/maresikkk" target="_blank" rel="noopener noreferrer">Тг-канал</a><a href="https://www.instagram.com/mmarrusya/" target="_blank" rel="noopener noreferrer">Инстаграм*</a></nav><small class="footer-note">*Инстаграм запрещен на территории РФ</small></div></footer>
+  </body>
+</html>

@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#ffffff" />
+    <meta name="description" content="Ila Estate — редизайн сайта элитной недвижимости. Проект Маруси Шебановой." />
+    <title>Ila Estate — Маруся Шебанова</title>
+    <script src="./layout-scale.js"></script>
+    <link rel="stylesheet" href="./styles.css" />
+    <link rel="stylesheet" href="./process-art.css" />
+    <link rel="stylesheet" href="./designers.css" />
+    <link rel="stylesheet" href="./layout-scale.css" />
+    <link rel="stylesheet" href="./projects-page.css" />
+    <link rel="stylesheet" href="./project-detail.css" />
+    <link rel="stylesheet" href="./portrait-tablet.css" />
+    <link rel="stylesheet" href="./mobile.css" />
+    <script src="./typography.js" defer></script>
+    <script src="./music.js" defer></script>
+    <script src="./mobile-menu.js" defer></script>
+    <script src="./tooltip-position.js" defer></script>
+    <script src="./project-filters.js" defer></script>
+    <script src="./page-content.js" defer></script>
+    <script src="./navigation.js" defer></script>
+  </head>
+  <body class="project-detail-page" id="top">
+    <header class="site-header">
+      <a class="brand" href="./index.html#top">Маруся Шебанова</a>
+      <button class="mobile-menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu">Меню</button>
+      <nav class="main-nav" id="mobile-menu" aria-label="Основная навигация">
+        <a href="./projects.html">Проекты</a>
+        <a href="./materials.html?category=videos">Видео</a>
+        <a href="./materials.html?category=articles">Статьи</a>
+        <a href="https://t.me/mmarrusyaa" target="_blank" rel="noopener noreferrer">Связаться</a>
+        <button class="sound-button gradient-blue lift-on-hover" type="button" aria-label="Включить музыку" title="Включить музыку" aria-pressed="false" aria-controls="background-music">
+          <img src='./assets/блок "познакомимся поближе%3F"/iconoir_sound-low-solid.svg' width="16" height="16" alt="" aria-hidden="true" />
+        </button>
+      </nav>
+    </header>
+    <audio id="background-music" src="./assets/camilo-septimo-inevitable.mp3" preload="none" loop></audio>
+
+    <main class="project-detail-main shell">
+      <section class="project-detail" aria-labelledby="project-detail-title">
+        <div class="project-detail-copy">
+          <h1 id="project-detail-title">Редизайн сайта элитной недвижимости</h1>
+          <div class="project-detail-description">
+            <p>Клиент пришел за редизайном турецкого филиала, но в процессе выяснилось: проблема не в визуале, а в том, что сайт не отвечал на вопросы покупателей элитной недвижимости.</p>
+            <p>63% клиентов — топ-менеджеры, которые выбирают недвижимость себе или как инвестицию. Привыкли к сервису, не терпят хаоса и бессмысленной информации.</p>
+            <p>В ходе исследования нашли цитату клиента: «Я не хочу читать про удобную инфраструктуру. Я хочу увидеть, как светится бассейн на закате».<br />Это легло в логику сайта — убеждать визуалом, а не текстом. Больше фото, меньше слов, но сохранить грань между эстетикой и информативностью, потому что половина аудитории берет для инвестиций, не для красоты.</p>
+            <p>Каталог из 24 объектов верстался на Tilda Zero. Чтобы клиент мог сам добавлять новые карточки — разработала систему 3×2, при которой карточка автоматически адаптируется под все устройства.</p>
+          </div>
+          <p class="project-detail-year">2024</p>
+        </div>
+
+        <div class="project-detail-gallery" aria-label="Иллюстрации проекта Ila Estate">
+          <div class="project-detail-gallery-row project-detail-gallery-row--two">
+            <figure class="project-detail-media"><img src="./assets/projects/Ila Estate/cover.png" alt="Сайт Ila Estate на ноутбуке" /></figure>
+            <figure class="project-detail-media"><img src="./assets/projects/Ila Estate/2.png" alt="Сайт Ila Estate на планшете" /></figure>
+          </div>
+          <figure class="project-detail-media project-detail-media--wide"><img src="./assets/projects/Ila Estate/3.png" alt="Каталог объектов Ila Estate" loading="lazy" /></figure>
+          <div class="project-detail-gallery-row project-detail-gallery-row--two">
+            <figure class="project-detail-media"><img src="./assets/projects/Ila Estate/4.png" alt="Мобильная версия сайта Ila Estate" loading="lazy" /></figure>
+            <figure class="project-detail-media"><img src="./assets/projects/Ila Estate/5.png" alt="Элементы интерфейса и описание объекта" loading="lazy" /></figure>
+          </div>
+          <figure class="project-detail-media project-detail-media--landscape"><img src="./assets/projects/Ila Estate/6.png" alt="Сайт Ila Estate на ноутбуке" loading="lazy" /></figure>
+          <div class="project-detail-gallery-row project-detail-gallery-row--closing">
+            <figure class="project-detail-media"><img src="./assets/projects/Ila Estate/7.png" alt="Мобильная версия и интерьер" loading="lazy" /></figure>
+            <figure class="project-detail-media"><img src="./assets/projects/Ila Estate/8.png" alt="Экран сайта на планшете" loading="lazy" /></figure>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer shell" id="contact"><span class="footer-update">Вайбкод. Обновлено: 2026</span><a class="pill gradient-blue footer-top" href="#top">Наверх</a><div class="footer-social"><nav aria-label="Социальные сети"><a class="footer-contact" href="https://t.me/mmarrusyaa" target="_blank" rel="noopener noreferrer">Связаться</a><a href="https://youtube.com/@mmarrusyaa?si=Yy90SyHRywnETBBz" target="_blank" rel="noopener noreferrer">Ютуб</a><a href="https://t.me/maresikkk" target="_blank" rel="noopener noreferrer">Тг-канал</a><a href="https://www.instagram.com/mmarrusya/" target="_blank" rel="noopener noreferrer">Инстаграм*</a></nav><small class="footer-note">*Инстаграм запрещен на территории РФ</small></div></footer>
+  </body>
+</html>

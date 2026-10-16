@@ -1,0 +1,25 @@
+@media (min-width: 1101px) {
+  html {
+    overflow-x: hidden;
+  }
+
+  body {
+    position: relative;
+    width: 1440px;
+    zoom: var(--layout-scale, 1);
+  }
+
+  .shell {
+    width: calc(100% - 20px);
+  }
+
+  .site-header {
+    padding-right: 10px;
+    padding-left: 10px;
+  }
+
+  .process-grid {
+    margin-right: 0;
+    margin-left: 0;
+  }
+}

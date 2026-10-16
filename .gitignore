@@ -1,0 +1,5 @@
+.DS_Store
+__pycache__/
+*.pyc
+# Source assets stay local; publish only files referenced by the site.
+assets/

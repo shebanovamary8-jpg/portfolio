@@ -1,0 +1,271 @@
+.process-art {
+  height: auto;
+  aspect-ratio: 349 / 423;
+}
+
+.process-stages {
+  container-type: inline-size;
+  overflow: visible;
+}
+
+.process-stages::before {
+  content: none;
+}
+
+.process-stages-backdrop {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  border-radius: inherit;
+  background: #fff;
+}
+
+.process-stages-backdrop::before {
+  content: "";
+  position: absolute;
+  inset: -32px;
+  background: url('./assets/process-1.png') center / cover;
+  filter: blur(25px);
+}
+
+.process-stages .stage-list {
+  left: 20px;
+  right: clamp(0px, calc(100% - 190px), 30px);
+  z-index: 1;
+}
+
+.process-card:first-child {
+  position: relative;
+  z-index: 2;
+}
+
+.stage-list .stage-tooltip-trigger {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  height: 39px;
+  padding: 10px 20px;
+  border: 0;
+  border-radius: 100px;
+  background: #fff;
+  color: var(--ink);
+  line-height: 19px;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.stage-tooltip-trigger:focus-visible {
+  outline: 2px solid #414141;
+  outline-offset: 3px;
+}
+
+.stage-list .stage-tooltip {
+  position: absolute;
+  top: calc(100% + 12px);
+  left: 0;
+  display: block;
+  height: auto;
+  padding: 40px;
+  border-radius: 24px;
+  background: #fff;
+  box-shadow: 0 0 8px rgba(65,65,65,.12);
+  color: var(--muted);
+  font-size: 16px;
+  line-height: 19px;
+  font-weight: 400;
+  text-align: left;
+  white-space: normal;
+  visibility: hidden;
+  opacity: 0;
+  transform: translateY(6px);
+  transition: opacity .18s ease, transform .18s ease, visibility .18s;
+  pointer-events: none;
+  z-index: 20;
+}
+
+.stage-list .stage-tooltip--research {
+  width: 484px;
+  min-height: 194px;
+}
+
+.stage-list .stage-tooltip--research > span {
+  display: block;
+  height: auto;
+  padding: 0;
+  border-radius: 0;
+  background: transparent;
+  white-space: normal;
+}
+
+.stage-list .stage-tooltip--research > span + span {
+  margin-top: 20px;
+}
+
+.stage-list .stage-tooltip--build {
+  width: 339px;
+  min-height: 137px;
+}
+
+.stage-tooltip-trigger:hover .stage-tooltip,
+.stage-tooltip-trigger:focus .stage-tooltip,
+.stage-tooltip-trigger:focus-visible .stage-tooltip {
+  visibility: visible;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .stage-list .stage-tooltip { transition: none; transform: none; }
+}
+
+.designers {
+  margin-top: 64px;
+}
+
+@media (max-width: 760px) {
+  .designers {
+    margin-top: 40px;
+  }
+}
+
+.process-video {
+  background: url('./assets/process/градиент.png') center / cover;
+  container-type: inline-size;
+}
+
+.process-video::before {
+  content: none;
+}
+
+.process-video-orbit {
+  top: 36.6%;
+  transform: translate(-50%, -50%);
+}
+
+.process-video-orbit > img,
+.process-video-orbit > span {
+  width: min(96px, 30cqw);
+  height: min(96px, 30cqw);
+}
+
+.process-video-orbit span img {
+  width: min(41px, 13cqw);
+  height: min(41px, 13cqw);
+  border-radius: 0;
+  object-fit: contain;
+}
+
+.process-notion {
+  background: url('./assets/process/что-то деленое.png') center / cover;
+}
+
+.process-notion .notion-sheet {
+  position: absolute;
+  display: block;
+  height: auto;
+  padding: 0;
+  border-radius: 0;
+  background: none;
+  box-shadow: none;
+  transform: none;
+}
+
+.process-notion .notion-sheet-materials {
+  top: 30px;
+  left: 17px;
+  width: 67.34%;
+}
+
+.process-notion .notion-sheet-progress {
+  top: auto;
+  bottom: 30px;
+  left: auto;
+  right: 17px;
+  width: 71.35%;
+}
+
+.process-contract {
+  background: url('./assets/process/облака.png') center / cover;
+}
+
+.contract-lock {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  display: grid;
+  place-items: center;
+  width: 43px;
+  height: 43px;
+  border-radius: 50%;
+  background: #fff;
+}
+
+.contract-lock img {
+  width: 19px;
+  height: 19px;
+}
+
+.contract-messages {
+  position: absolute;
+  inset: 0 20px;
+  display: grid;
+  place-items: center;
+}
+
+.contract-messages img {
+  display: block;
+  width: min(258px, 100%);
+  aspect-ratio: 258 / 184;
+  max-height: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+@media (min-width: 761px) and (max-width: 1100px) {
+  .process-stages .stage-list {
+    top: 12px;
+    left: 12px;
+    right: 12px;
+    gap: 4px;
+  }
+
+  .stage-list > span,
+  .stage-list .stage-tooltip-trigger {
+    height: 30px;
+    padding: 6px 11px;
+    gap: 4px;
+    font-size: 12px;
+    line-height: 18px;
+  }
+
+  .stage-list b {
+    width: 14px;
+    height: 14px;
+    font-size: 12px;
+    line-height: 14px;
+  }
+
+  .stage-list .stage-tooltip {
+    min-height: 0;
+    padding: 24px;
+    border-radius: 24px;
+    font-size: 14px;
+    line-height: 18px;
+  }
+
+  .stage-list .stage-tooltip--research {
+    width: min(360px, calc(100vw - 24px));
+  }
+
+  .stage-list .stage-tooltip--build {
+    width: min(280px, calc(100vw - 24px));
+  }
+
+  .process-art-pill {
+    max-width: calc(100% - 20px);
+    padding: 9px 10px;
+    font-size: clamp(11px, 1.25vw, 14px);
+    line-height: 16px;
+  }
+}
