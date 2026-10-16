@@ -7,28 +7,29 @@ const resultsStatus = root.querySelector('#project-results-status');
 
 if (filterButtons.length && projectCards.length) {
   if (projectsCount) projectsCount.textContent = String(projectCards.length);
-  const selectedCategories = new Set();
+  let selectedCategory = null;
 
   function updateProjects() {
     let visibleCount = 0;
 
     for (const card of projectCards) {
       const categories = card.dataset.categories.split(/\s+/);
-      const matches = selectedCategories.size === 0 || [...selectedCategories].some((category) => categories.includes(category));
+      const matches = selectedCategory === null || categories.includes(selectedCategory);
       card.hidden = !matches;
       if (matches) visibleCount += 1;
     }
 
     emptyMessage.hidden = visibleCount !== 0;
     resultsStatus.textContent = `Показано проектов: ${visibleCount}`;
+    for (const button of filterButtons) {
+      button.setAttribute('aria-pressed', String(button.dataset.filter === selectedCategory));
+    }
   }
 
   for (const button of filterButtons) {
     button.addEventListener('click', () => {
       const category = button.dataset.filter;
-      if (selectedCategories.has(category)) selectedCategories.delete(category);
-      else selectedCategories.add(category);
-      button.setAttribute('aria-pressed', String(selectedCategories.has(category)));
+      selectedCategory = selectedCategory === category ? null : category;
       updateProjects();
     });
   }
