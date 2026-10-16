@@ -67,6 +67,7 @@ window.initGenerationGallery();
 (() => {
   const pages = window.portfolioPageMarkup;
   if (!pages) return;
+  if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
 
   const physicalPage = location.pathname.split('/').pop() || 'index.html';
   if (!Object.hasOwn(pages, physicalPage)) return;
@@ -139,11 +140,18 @@ window.initGenerationGallery();
       window.setMaterialsCategory?.(new URLSearchParams(location.search).get('category'), document.querySelector('main'));
     }
 
-    requestAnimationFrame(() => {
+    // Reset the position before the new page is painted. Waiting for the next
+    // frame briefly exposed the previous page's scroll position on mobile.
+    const root = document.documentElement;
+    const previousScrollBehavior = root.style.scrollBehavior;
+    root.style.scrollBehavior = 'auto';
+    try {
       const target = fragment && document.getElementById(fragment);
-      if (target) target.scrollIntoView();
+      if (target) target.scrollIntoView({ behavior: 'auto' });
       else window.scrollTo(0, 0);
-    });
+    } finally {
+      root.style.scrollBehavior = previousScrollBehavior;
+    }
   }
 
   function localPage(url) {
