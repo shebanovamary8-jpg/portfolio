@@ -24,8 +24,8 @@
   content: "";
   position: absolute;
   inset: -32px;
-  background: url('./assets/process-1.png') center / cover;
-  filter: blur(25px);
+  background: url('./assets/process-1.webp') center / cover;
+  filter: blur(12px);
 }
 
 .process-stages .stage-list {
@@ -130,7 +130,7 @@
 }
 
 .process-video {
-  background: url('./assets/process/градиент.png') center / cover;
+  background: url('./assets/process/градиент.webp') center / cover;
   container-type: inline-size;
 }
 
@@ -157,7 +157,7 @@
 }
 
 .process-notion {
-  background: url('./assets/process/что-то деленое.png') center / cover;
+  background: url('./assets/process/что-то деленое.webp') center / cover;
 }
 
 .process-notion .notion-sheet {
@@ -186,7 +186,7 @@
 }
 
 .process-contract {
-  background: url('./assets/process/облака.png') center / cover;
+  background: url('./assets/process/облака.webp') center / cover;
 }
 
 .contract-lock {
