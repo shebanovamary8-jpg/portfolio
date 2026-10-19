@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#ffffff" />
+    <meta name="description" content="Tissue Magazine — интернет-магазин журнала. Проект Маруси Шебановой." />
+    <title>Tissue Magazine — Маруся Шебанова</title>
+    <script src="./layout-scale.js"></script>
+    <link rel="stylesheet" href="./styles.css?v=20261019-1" />
+    <link rel="stylesheet" href="./process-art.css?v=20261020-1" />
+    <link rel="stylesheet" href="./designers.css" />
+    <link rel="stylesheet" href="./layout-scale.css" />
+    <link rel="stylesheet" href="./projects-page.css?v=20261020-1" />
+    <link rel="stylesheet" href="./project-detail.css" />
+    <link rel="stylesheet" href="./portrait-tablet.css" />
+    <link rel="stylesheet" href="./mobile.css?v=20261020-1" />
+    <script src="./typography.js" defer></script>
+    <script src="./music.js" defer></script>
+    <script src="./mobile-menu.js" defer></script>
+    <script src="./tooltip-position.js" defer></script>
+    <script src="./project-filters.js?v=20261020-2" defer></script>
+    <script src="./page-content.js?v=20261020-2" defer></script>
+    <script src="./navigation.js?v=20261020-2" defer></script>
+  </head>
+  <body class="project-detail-page project-detail-page--magazine" id="top">
+    <header class="site-header">
+      <a class="brand" href="./main/">Маруся Шебанова</a>
+      <button class="mobile-menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu">Меню</button>
+      <nav class="main-nav" id="mobile-menu" aria-label="Основная навигация">
+        <a href="./projects.html">Проекты</a>
+        <a href="./videos/">Видео</a>
+        <a href="./articles/">Статьи</a>
+        <a href="https://t.me/mmarrusyaa" target="_blank" rel="noopener noreferrer">Связаться</a>
+        <button class="sound-button gradient-blue lift-on-hover" type="button" aria-label="Включить музыку" title="Включить музыку" aria-pressed="false" aria-controls="background-music">
+          <img src='./assets/блок "познакомимся поближе%3F"/iconoir_sound-low-solid.svg' width="16" height="16" alt="" aria-hidden="true" />
+        </button>
+      </nav>
+    </header>
+    <audio id="background-music" src="./assets/camilo-septimo-inevitable.mp3" preload="none" loop></audio>
+
+    <main class="project-detail-main shell">
+      <section class="project-detail" aria-labelledby="project-detail-title">
+        <div class="project-detail-copy">
+          <h1 id="project-detail-title">Интернет магазин для журнала</h1>
+          <div class="project-detail-description">
+            <p>Ребята пришли с почти готовой айдентикой: утилитарный стиль и техническая эстетика, в духе Balenciaga.</p>
+            <p>Выпуски посвящены всему, что связано с творчеством и искусством. Ребята сами верстают журнал и делают это очень дерзко, поэтому нашей задачей было передать такое же настроение на сайте.</p>
+            <p>Главная страница всегда будет посвящена актуальному выпуску, поэтому на дизайне надо было учесть ее гибкость и простоту заполнения клиентом. За основу взяли стиль брутализм, показали много сверстанных страниц и фото-контента из журнала.</p>
+            <p>Помимо главной сделали страницу о ребятах, страницы контактов, покупки и блок после покупки.</p>
+          </div>
+          <p class="project-detail-year">2024</p>
+        </div>
+
+        <div class="project-detail-gallery" id="project-gallery" aria-label="Иллюстрации проекта Магазин журнала">
+          <figure class="project-detail-media"><img src="./assets/projects/Магазин журнала/1.webp" alt="Кадр 1 проекта Магазин журнала" / loading="eager" fetchpriority="high" width="2724" height="1230"></figure>
+          <div class="project-detail-gallery-row project-detail-gallery-row--two"><figure class="project-detail-media"><img src="./assets/projects/Магазин журнала/2.webp" alt="Кадр 2 проекта Магазин журнала" loading="lazy"  width="1072" height="1350" /></figure><figure class="project-detail-media"><img src="./assets/projects/Магазин журнала/3.webp" alt="Кадр 3 проекта Магазин журнала" loading="lazy"  width="1629" height="1350" /></figure></div>
+          <figure class="project-detail-media"><img src="./assets/projects/Магазин журнала/4.webp" alt="Кадр 4 проекта Магазин журнала" loading="lazy"  width="2724" height="1569" /></figure>
+          <div class="project-detail-gallery-row project-detail-gallery-row--two"><figure class="project-detail-media"><img src="./assets/projects/Магазин журнала/5.webp" alt="Кадр 5 проекта Магазин журнала" loading="lazy"  width="1235" height="1350" /></figure><figure class="project-detail-media"><img src="./assets/projects/Магазин журнала/cover.webp" alt="Кадр 6 проекта Магазин журнала" loading="lazy"  width="1466" height="1350" /></figure></div>
+          <figure class="project-detail-media"><img src="./assets/projects/Магазин журнала/7.webp" alt="Кадр 7 проекта Магазин журнала" loading="lazy"  width="2721" height="1536" /></figure>
+          <div class="project-detail-gallery-row project-detail-gallery-row--two"><figure class="project-detail-media"><img src="./assets/projects/Магазин журнала/8.webp" alt="Кадр 8 проекта Магазин журнала" loading="lazy"  width="1349" height="1252" /></figure><figure class="project-detail-media"><img src="./assets/projects/Магазин журнала/9.webp" alt="Кадр 9 проекта Магазин журнала" loading="lazy"  width="1349" height="1252" /></figure></div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer shell" id="contact"><span class="footer-update">Вайбкод. Обновлено: 2026</span><a class="pill gradient-blue footer-top" href="#top">Наверх</a><div class="footer-social"><nav aria-label="Социальные сети"><a class="footer-contact" href="https://t.me/mmarrusyaa" target="_blank" rel="noopener noreferrer">Связаться</a><a href="https://youtube.com/@mmarrusyaa?si=Yy90SyHRywnETBBz" target="_blank" rel="noopener noreferrer">Ютуб</a><a href="https://t.me/maresikkk" target="_blank" rel="noopener noreferrer">Тг-канал</a><a href="https://www.instagram.com/mmarrusya/" target="_blank" rel="noopener noreferrer">Инстаграм*</a></nav><small class="footer-note">*Инстаграм запрещен на территории РФ</small></div></footer>
+  </body>
+</html>

@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <base href="../" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#ffffff" />
+    <meta name="description" content="Видео и статьи Маруси Шебановой о дизайне." />
+    <title>Полезные материалы — Маруся Шебанова</title>
+    <script src="./layout-scale.js"></script>
+    <link rel="stylesheet" href="./styles.css?v=20261019-1" />
+    <link rel="stylesheet" href="./process-art.css?v=20261020-1" />
+    <link rel="stylesheet" href="./designers.css" />
+    <link rel="stylesheet" href="./layout-scale.css" />
+    <link rel="stylesheet" href="./projects-page.css?v=20261020-1" />
+    <link rel="stylesheet" href="./project-detail.css" />
+    <link rel="stylesheet" href="./portrait-tablet.css" />
+    <link rel="stylesheet" href="./mobile.css?v=20261020-1" />
+    <script src="./typography.js" defer></script>
+    <script src="./music.js" defer></script>
+    <script src="./mobile-menu.js" defer></script>
+    <script src="./project-filters.js?v=20261020-2" defer></script>
+    <script src="./tooltip-position.js" defer></script>
+    <script src="./page-content.js?v=20261020-2" defer></script>
+    <script src="./navigation.js?v=20261020-2" defer></script>
+  </head>
+  <body class="materials-page" id="top">
+    <header class="site-header">
+      <a class="brand" href="./main/">Маруся Шебанова</a>
+      <button class="mobile-menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu">Меню</button>
+      <nav class="main-nav" id="mobile-menu" aria-label="Основная навигация">
+        <a href="./projects.html">Проекты</a>
+        <a href="./videos/">Видео</a>
+        <a href="./articles/">Статьи</a>
+        <a href="https://t.me/mmarrusyaa" target="_blank" rel="noopener noreferrer">Связаться</a>
+        <button class="sound-button gradient-blue lift-on-hover" type="button" aria-label="Включить музыку" title="Включить музыку" aria-pressed="false" aria-controls="background-music">
+          <img src='./assets/блок "познакомимся поближе%3F"/iconoir_sound-low-solid.svg' width="16" height="16" alt="" aria-hidden="true" />
+        </button>
+      </nav>
+    </header>
+    <audio id="background-music" src="./assets/camilo-septimo-inevitable.mp3" preload="none" loop></audio>
+
+    <main class="projects-page-main shell" id="materials">
+      <section aria-labelledby="materials-page-title">
+        <div class="projects-page-heading">
+          <h1 id="materials-page-title">Полезные материалы <span class="projects-count">9</span></h1>
+          <div class="project-filters" role="group" aria-label="Фильтры материалов">
+            <button class="project-filter material-filter" type="button" data-filter="videos" aria-pressed="false">видео</button>
+            <button class="project-filter material-filter" type="button" data-filter="articles" aria-pressed="false">статьи</button>
+          </div>
+        </div>
+
+        <div class="project-grid projects-page-grid materials-page-grid materials-video-grid">
+          <article class="project-card material-card" data-category="videos">
+            <a class="project-card-link" target="_blank" rel="noopener noreferrer" href="https://www.youtube.com/watch?v=ln-i-fCiZ68" aria-label="Смотреть видео: как расти в дизайне">
+              <div class="project-image"><img class="project-cover" src="./assets/videos/как расти.webp" alt=""  width="2124" height="1200" /></div>
+              <h3>Как расти в дизайне: что учить, куда двигаться и как понять свой уровень</h3>
+            </a>
+          </article>
+          <article class="project-card material-card" data-category="videos">
+            <a class="project-card-link" target="_blank" rel="noopener noreferrer" href="https://www.youtube.com/watch?v=H5Qw8TRNeaI" aria-label="Смотреть видео: как я задизайнила, завайбкодила и релизнула сайт без разработчика">
+              <div class="project-image"><img class="project-cover" src="./assets/videos/вайбкод.webp" alt="" loading="lazy"  width="2124" height="1200" /></div>
+              <h3>Как я задизайнила, завайбкодила и релизнула сайт без разработчика</h3>
+            </a>
+          </article>
+          <article class="project-card material-card" data-category="videos">
+            <a class="project-card-link" target="_blank" rel="noopener noreferrer" href="https://www.youtube.com/watch?v=fN_Y_7H8Jmo" aria-label="Смотреть видео: как дизайнеру проводить аналитику">
+              <div class="project-image"><img class="project-cover" src="./assets/videos/аналитика.webp" alt="" loading="lazy"  width="2124" height="1200" /></div>
+              <h3>Как дизайнеру проводить аналитику — полный разбор с примерами</h3>
+            </a>
+          </article>
+          <article class="project-card material-card" data-category="videos">
+            <a class="project-card-link" target="_blank" rel="noopener noreferrer" href="https://www.youtube.com/watch?v=uGPPyI0Gxt4" aria-label="Смотреть видео: UX-тексты без копирайтера">
+              <div class="project-image"><img class="project-cover" src="./assets/videos/тексты.webp" alt="" loading="lazy"  width="2124" height="1200" /></div>
+              <h3>UX-тексты без копирайтера: правила, примеры, чек-листы и системный подход</h3>
+            </a>
+          </article>
+          <article class="project-card material-card" data-category="videos">
+            <a class="project-card-link" target="_blank" rel="noopener noreferrer" href="https://www.youtube.com/watch?v=nAhyBDBVLdk" aria-label="Смотреть видео: создаем дизайн-портфолио для фриланса и найма">
+              <div class="project-image"><img class="project-cover" src="./assets/videos/портфолио.webp" alt="" loading="lazy"  width="2124" height="1200" /></div>
+              <h3>Создаем дизайн-портфолио для фриланса и найма // ПОЛНЫЙ ГАЙД</h3>
+            </a>
+          </article>
+          <article class="project-card material-card" data-category="videos">
+            <a class="project-card-link" target="_blank" rel="noopener noreferrer" href="https://www.youtube.com/watch?v=wUyqfxaFM9o" aria-label="Смотреть видео: генерируем модель и съемку для товара">
+              <div class="project-image"><img class="project-cover" src="./assets/videos/миджорни.webp" alt="" loading="lazy"  width="2124" height="1200" /></div>
+              <h3>Генерируем модель и съемку для товара // MIDJOURNEY + REVE</h3>
+            </a>
+          </article>
+        </div>
+        <div class="materials-article-grid">
+          <article class="material-card material-article" data-category="articles">
+            <a class="project-card-link" href="https://mmarrusya.notion.site/d90d09513b8b41b4a7a3849ec2129825" target="_blank" rel="noopener noreferrer" aria-label="Читать статью: Где можно учиться дизайну бесплатно?">
+              <h3>Где можно учиться дизайну бесплатно?</h3>
+            </a>
+          </article>
+          <article class="material-card material-article" data-category="articles">
+            <a class="project-card-link" href="https://mmarrusya.notion.site/Midjourney-28c584e2bf678049a6e1f86fb26f0ad8" target="_blank" rel="noopener noreferrer" aria-label="Читать статью: Учимся видеть свет: как я строила кино внутри Midjourney">
+              <h3>Учимся видеть свет: как я строила кино внутри Midjourney</h3>
+            </a>
+          </article>
+          <article class="material-card material-article" data-category="articles">
+            <a class="project-card-link" href="https://teletype.in/@mmarrusyaa/brief_for_designer" target="_blank" rel="noopener noreferrer" aria-label="Читать статью: ТЗ для дизайнера: как составить бриф, который снижает количество правок">
+              <h3>ТЗ для дизайнера: как составить бриф, который снижает количество правок</h3>
+            </a>
+          </article>
+        </div>
+        <p class="projects-empty materials-empty" hidden>Материалы не найдены.</p>
+        <p class="sr-only" id="materials-results-status" role="status" aria-live="polite"></p>
+      </section>
+    </main>
+
+    <footer class="site-footer shell" id="contact"><span class="footer-update">Вайбкод. Обновлено: 2026</span><a class="pill gradient-blue footer-top" href="#top">Наверх</a><div class="footer-social"><nav aria-label="Социальные сети"><a class="footer-contact" href="https://t.me/mmarrusyaa" target="_blank" rel="noopener noreferrer">Связаться</a><a href="https://youtube.com/@mmarrusyaa?si=Yy90SyHRywnETBBz" target="_blank" rel="noopener noreferrer">Ютуб</a><a href="https://t.me/maresikkk" target="_blank" rel="noopener noreferrer">Тг-канал</a><a href="https://www.instagram.com/mmarrusya/" target="_blank" rel="noopener noreferrer">Инстаграм*</a></nav><small class="footer-note">*Инстаграм запрещен на территории РФ</small></div></footer>
+  </body>
+</html>

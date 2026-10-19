@@ -76,6 +76,7 @@ window.initMaterialsFilters = (root = document) => {
   for (const button of filterButtons) {
     button.addEventListener('click', () => {
       controller.setCategory(button.dataset.filter);
+      window.syncMaterialsRoute?.(button.dataset.filter);
     });
   }
 
@@ -86,7 +87,11 @@ window.initMaterialsFilters = (root = document) => {
     },
   };
   materialsFiltersByRoot.set(root, controller);
-  controller.setCategory(new URLSearchParams(location.search).get('category'));
+  const path = location.pathname.replace(/\/+$/, '');
+  const initialCategory = path.endsWith('/articles') || path.endsWith('/articles/index.html')
+    ? 'articles'
+    : new URLSearchParams(location.search).get('category');
+  controller.setCategory(initialCategory);
   return controller;
 };
 

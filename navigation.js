@@ -63,25 +63,92 @@ window.initGenerationGallery = (root = document) => {
 
 window.initGenerationGallery();
 
-// Keep the header and its audio element alive while switching local pages.
+// Keep the header and its audio element alive while switching pages.
 (() => {
   const pages = window.portfolioPageMarkup;
   if (!pages) return;
   if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
 
-  const physicalPage = location.pathname.split('/').pop() || 'index.html';
-  if (!Object.hasOwn(pages, physicalPage)) return;
-
-  const directory = new URL('./', location.href).pathname;
+  const siteRoot = new URL('./', document.baseURI);
+  const fileMode = location.protocol === 'file:';
   const hasPage = name => Object.hasOwn(pages, name);
+  const pageAliases = {
+    'project.html': 'ila-estate.html',
+    'magazine-shop.html': 'tissue-magazine.html',
+  };
   const fragmentFromHash = hash => {
     try { return decodeURIComponent(hash.slice(1)); }
     catch { return ''; }
   };
-  const pageFromUrl = () => {
-    const requested = new URLSearchParams(location.search).get('view');
-    return hasPage(requested) ? requested : physicalPage;
-  };
+
+  function routeFromUrl(url, includeLegacyView = true) {
+    if (url.protocol !== location.protocol || url.host !== location.host) return null;
+    if (!url.pathname.startsWith(siteRoot.pathname)) return null;
+
+    const path = url.pathname.slice(siteRoot.pathname.length).replace(/\/+$/, '');
+    let page;
+    let category = 'videos';
+    if (path === '' || path === 'index.html' || path === 'main' || path === 'main/index.html') {
+      page = 'index.html';
+    } else if (path === 'videos' || path === 'videos/index.html') {
+      page = 'materials.html';
+    } else if (path === 'articles' || path === 'articles/index.html') {
+      page = 'materials.html';
+      category = 'articles';
+    } else if (Object.hasOwn(pageAliases, path)) {
+      page = pageAliases[path];
+    } else if (hasPage(path)) {
+      page = path;
+    } else {
+      return null;
+    }
+
+    if (includeLegacyView) {
+      const requested = url.searchParams.get('view');
+      if (Object.hasOwn(pageAliases, requested)) page = pageAliases[requested];
+      else if (hasPage(requested)) page = requested;
+    }
+    if (page === 'materials.html' && url.searchParams.get('category') === 'articles') {
+      category = 'articles';
+    }
+    return { page, category };
+  }
+
+  function canonicalUrl(route, hash = '') {
+    const path = route.page === 'index.html' ? 'main'
+      : route.page === 'materials.html' ? route.category
+      : route.page;
+    const url = new URL(path, siteRoot);
+    url.hash = hash;
+    return url;
+  }
+
+  function fileUrl(route, hash = '') {
+    const url = new URL(location.href);
+    if (route.page === physicalPage) url.searchParams.delete('view');
+    else url.searchParams.set('view', route.page);
+    if (route.page === 'materials.html') url.searchParams.set('category', route.category);
+    else url.searchParams.delete('category');
+    url.hash = hash;
+    return url;
+  }
+
+  const physicalRoute = routeFromUrl(new URL(location.href), false);
+  if (!physicalRoute) return;
+  const physicalPage = physicalRoute.page;
+  const currentRoute = () => routeFromUrl(new URL(location.href)) || physicalRoute;
+
+  if (!fileMode) {
+    const route = currentRoute();
+    const path = location.pathname.slice(siteRoot.pathname.length);
+    const directHome = route.page === 'index.html'
+      && (path === '' || path === 'index.html')
+      && !new URLSearchParams(location.search).has('view');
+    if (!directHome) {
+      const cleanUrl = canonicalUrl(route, location.hash);
+      if (cleanUrl.href !== location.href) history.replaceState(null, '', cleanUrl);
+    }
+  }
 
   const cache = new Map([[physicalPage, {
     main: document.querySelector('main'),
@@ -106,18 +173,25 @@ window.initGenerationGallery();
     return nodes;
   }
 
-  function updateHeader(name) {
+  function updateHeader(route) {
     const brand = header?.querySelector('.brand');
     const links = header?.querySelectorAll('.main-nav a');
-    if (brand) brand.href = name === 'index.html' ? '#top' : './index.html#top';
+    if (brand) brand.href = new URL('main/', siteRoot).href;
     if (!links?.length) return;
-    links[0].toggleAttribute('aria-current', name === 'projects.html');
-    if (name === 'projects.html') links[0].setAttribute('aria-current', 'page');
-    links[1].href = './materials.html?category=videos';
-    links[2].href = './materials.html?category=articles';
+    const targets = ['projects.html', 'videos/', 'articles/'];
+    for (let index = 0; index < targets.length; index += 1) {
+      links[index].href = new URL(targets[index], siteRoot).href;
+      const selected = index === 0
+        ? route.page === 'projects.html'
+        : route.page === 'materials.html'
+          && route.category === (index === 1 ? 'videos' : 'articles');
+      if (selected) links[index].setAttribute('aria-current', 'page');
+      else links[index].removeAttribute('aria-current');
+    }
   }
 
-  function showPage(name, fragment = '') {
+  function showPage(route, fragment = '') {
+    const name = route.page;
     if (name !== activePage) {
       const outgoing = cache.get(activePage);
       const incoming = getPage(name);
@@ -126,7 +200,6 @@ window.initGenerationGallery();
       activePage = name;
       document.body.className = pages[name].bodyClass;
       document.title = pages[name].title;
-      updateHeader(name);
       if (!initialized.has(name)) {
         if (name === 'index.html') window.initTooltipPosition?.(incoming.main);
         if (name === 'projects.html') window.initProjectFilters?.(incoming.main);
@@ -137,8 +210,9 @@ window.initGenerationGallery();
     }
 
     if (name === 'materials.html') {
-      window.setMaterialsCategory?.(new URLSearchParams(location.search).get('category'), document.querySelector('main'));
+      window.setMaterialsCategory?.(route.category, document.querySelector('main'));
     }
+    updateHeader(route);
 
     // Reset the position before the new page is painted. Waiting for the next
     // frame briefly exposed the previous page's scroll position on mobile.
@@ -154,42 +228,48 @@ window.initGenerationGallery();
     }
   }
 
-  function localPage(url) {
-    if (url.protocol !== location.protocol || url.host !== location.host) return null;
-    if (!url.pathname.startsWith(directory)) return null;
-    const name = url.pathname.slice(directory.length);
-    return hasPage(name) ? name : null;
-  }
+  window.syncMaterialsRoute = category => {
+    if (activePage !== 'materials.html') return;
+    const route = { page: 'materials.html', category };
+    history.pushState(null, '', fileMode ? fileUrl(route) : canonicalUrl(route));
+    updateHeader(route);
+  };
 
   document.addEventListener('click', event => {
     if (event.defaultPrevented || event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
     const anchor = event.target.closest('a[href]');
     if (!anchor || anchor.hasAttribute('download') || (anchor.target && anchor.target !== '_self')) return;
-    if (anchor.getAttribute('href').startsWith('#')) return;
+    const href = anchor.getAttribute('href');
+    if (href.startsWith('#')) {
+      event.preventDefault();
+      const nextUrl = new URL(location.href);
+      nextUrl.hash = href;
+      history.pushState(null, '', nextUrl);
+      showPage(currentRoute(), fragmentFromHash(href));
+      return;
+    }
     const destination = new URL(anchor.href, location.href);
-    const name = localPage(destination);
-    if (!name) return;
+    const route = routeFromUrl(destination);
+    if (!route) return;
 
     event.preventDefault();
-    const nextUrl = new URL(location.href);
-    if (name === physicalPage) nextUrl.searchParams.delete('view');
-    else nextUrl.searchParams.set('view', name);
-    nextUrl.searchParams.delete('category');
-    if (name === 'materials.html' && destination.searchParams.has('category')) {
-      nextUrl.searchParams.set('category', destination.searchParams.get('category'));
-    }
-    nextUrl.hash = destination.hash;
-    history.pushState(null, '', nextUrl);
-    showPage(name, fragmentFromHash(destination.hash));
+    history.pushState(null, '', fileMode
+      ? fileUrl(route, destination.hash)
+      : canonicalUrl(route, destination.hash));
+    showPage(route, fragmentFromHash(destination.hash));
   });
 
   window.addEventListener('popstate', () => {
-    showPage(pageFromUrl(), fragmentFromHash(location.hash));
+    showPage(currentRoute(), fragmentFromHash(location.hash));
   });
 
-  if (pageFromUrl() !== physicalPage) {
-    showPage(pageFromUrl(), fragmentFromHash(location.hash));
+  const initialRoute = currentRoute();
+  if (initialRoute.page !== physicalPage) {
+    showPage(initialRoute, fragmentFromHash(location.hash));
+  } else {
+    if (initialRoute.page === 'materials.html') {
+      window.setMaterialsCategory?.(initialRoute.category, document.querySelector('main'));
+    }
+    updateHeader(initialRoute);
   }
-
-  updateHeader(activePage);
 })();
