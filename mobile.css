@@ -42,6 +42,8 @@
 .mobile-menu-toggle { display: none; }
 
 @media (max-width: 760px) {
+  .about-mobile-line { display: block; }
+
   .hero h1 { font-size: var(--font-heading); }
 
   .hero p { font-size: var(--font-body); }
@@ -389,6 +391,13 @@
 
 @media (max-width: 480px) {
   .project-filter { padding-inline: 18px; }
+
+  .project-grid { row-gap: 36px; }
+
+  .project-card[data-project] h3,
+  .materials-page .material-card h3 { min-height: 0; }
+
+  .process-grid { row-gap: 48px; }
 }
 
 /* Plus symbols have inset space without changing the original badge diameter. */

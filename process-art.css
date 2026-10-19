@@ -16,7 +16,8 @@
   position: absolute;
   inset: 0;
   overflow: hidden;
-  border-radius: inherit;
+  border-radius: 24px;
+  clip-path: inset(0 round 24px);
   background: #fff;
 }
 
