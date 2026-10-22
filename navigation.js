@@ -95,6 +95,10 @@ window.initGenerationGallery();
     } else if (path === 'articles' || path === 'articles/index.html') {
       page = 'materials.html';
       category = 'articles';
+    } else if (path === 'privacypolicy' || path === 'privacypolicy/index.html') {
+      page = 'privacypolicy.html';
+    } else if (path === 'consent' || path === 'consent/index.html') {
+      page = 'consent.html';
     } else if (Object.hasOwn(pageAliases, path)) {
       page = pageAliases[path];
     } else if (hasPage(path)) {
@@ -117,6 +121,8 @@ window.initGenerationGallery();
   function canonicalUrl(route, hash = '') {
     const path = route.page === 'index.html' ? 'main'
       : route.page === 'materials.html' ? route.category
+      : route.page === 'privacypolicy.html' ? 'privacypolicy'
+      : route.page === 'consent.html' ? 'consent'
       : route.page;
     const url = new URL(path, siteRoot);
     url.hash = hash;

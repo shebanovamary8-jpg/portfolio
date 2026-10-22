@@ -77,7 +77,7 @@ def main():
         path for path in ROOT.iterdir()
         if path.is_file() and path.suffix in {".html", ".css", ".js"}
     )
-    site_files += [ROOT / route / "index.html" for route in ("main", "videos", "articles")]
+    site_files += [ROOT / route / "index.html" for route in ("main", "videos", "articles", "privacypolicy", "consent")]
     site_files += [ROOT / name for name in (
         "CNAME", ".nojekyll", ".gitignore", "build-page-content.py",
         "prepare-github-pages.py",

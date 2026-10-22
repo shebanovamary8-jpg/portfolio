@@ -12,7 +12,7 @@ from pathlib import Path
 
 root = Path(__file__).parent
 pages = {}
-for name in ("index.html", "projects.html", "materials.html", "ila-estate.html", "t-bank-product.html", "big-in-japan.html", "hacknet.html", "petrushka.html", "fran-silvestre.html", "alfa-identity.html", "piter-places.html", "tissue-magazine.html", "grandma-posters.html", "midjourney-gallery.html", "dating-app.html", "t-business-creatives.html"):
+for name in ("index.html", "projects.html", "materials.html", "ila-estate.html", "t-bank-product.html", "big-in-japan.html", "hacknet.html", "petrushka.html", "fran-silvestre.html", "alfa-identity.html", "piter-places.html", "tissue-magazine.html", "grandma-posters.html", "midjourney-gallery.html", "dating-app.html", "t-business-creatives.html", "privacypolicy.html", "consent.html"):
     html = (root / name).read_text(encoding="utf-8")
 
     def extract(pattern):
@@ -53,6 +53,8 @@ for route, source in (
     ("main", "index.html"),
     ("videos", "materials.html"),
     ("articles", "materials.html"),
+    ("privacypolicy", "privacypolicy.html"),
+    ("consent", "consent.html"),
 ):
     route_dir = root / route
     route_dir.mkdir(exist_ok=True)
