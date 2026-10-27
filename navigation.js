@@ -244,6 +244,10 @@ window.initGenerationGallery();
   document.addEventListener('click', event => {
     if (event.defaultPrevented || event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
     const anchor = event.target.closest('a[href]');
+    if (anchor?.hasAttribute('data-mobile-telegram') && (
+      navigator.userAgentData?.mobile || /Android|iPhone|iPad|iPod/i.test(navigator.userAgent) ||
+      (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1)
+    )) anchor.target = '_self';
     if (!anchor || anchor.hasAttribute('download') || (anchor.target && anchor.target !== '_self')) return;
     const href = anchor.getAttribute('href');
     if (href.startsWith('#')) {
